@@ -10,7 +10,6 @@ const LazyCountdown = lazy(() => import("@/components/wedding/Countdown").then(m
 const LazyCouple = lazy(() => import("@/components/wedding/Couple").then(m => ({ default: m.Couple })));
 const LazyStory = lazy(() => import("@/components/wedding/Story").then(m => ({ default: m.Story })));
 const LazyEvents = lazy(() => import("@/components/wedding/Events").then(m => ({ default: m.Events })));
-const LazyGallery = lazy(() => import("@/components/wedding/Gallery").then(m => ({ default: m.Gallery })));
 const LazyFamily = lazy(() => import("@/components/wedding/Family").then(m => ({ default: m.Family })));
 const LazyRSVP = lazy(() => import("@/components/wedding/RSVP").then(m => ({ default: m.RSVP })));
 const LazyEnding = lazy(() => import("@/components/wedding/Ending").then(m => ({ default: m.Ending })));
@@ -101,8 +100,6 @@ function Index() {
         <Suspense fallback={null}><LazyStory /></Suspense>
         <Divider />
         <Suspense fallback={null}><LazyEvents /></Suspense>
-        <Divider />
-        <Suspense fallback={null}><LazyGallery /></Suspense>
         <Divider />
         <Suspense fallback={null}><LazyFamily /></Suspense>
         <Divider />
