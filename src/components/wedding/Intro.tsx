@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Ornament } from "./Ornament";
 import { Monogram } from "./Monogram";
 import { Celebration } from "./Celebration";
@@ -14,22 +14,13 @@ export function Intro({
   onCelebrate?: () => void;
 }) {
   const [celebrating, setCelebrating] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
   const handleOpen = () => {
     if (celebrating) return;
     setCelebrating(true);
     onCelebrate?.();
-    timerRef.current = setTimeout(() => {
-      onOpen();
-    }, 2800);
+    onOpen();
   };
-
-  useEffect(() => {
-    return () => {
-      if (timerRef.current) clearTimeout(timerRef.current);
-    };
-  }, []);
 
   return (
     <AnimatePresence>
