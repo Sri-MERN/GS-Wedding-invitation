@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.webp";
-import groomImg from "@/assets/groom.webp";
-import brideImg from "@/assets/bride.webp";
 import { Ornament } from "./Ornament";
 
 export function Hero() {
@@ -20,72 +18,7 @@ export function Hero() {
         <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,transparent_40%,oklch(0_0_0/0.55)_100%)] pointer-events-none" />
       </div>
 
-      {/* Desktop Cinematic Side Portrait Overlays with Slow Floating Effect */}
-      <div className="hidden lg:block absolute left-8 xl:left-16 top-1/2 -translate-y-1/2 z-20 w-44 xl:w-48 overflow-visible">
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          animate={{
-            opacity: 0.85,
-            x: 0,
-            y: [-8, 8, -8],
-          }}
-          transition={{
-            initial: { delay: 1.8, duration: 1.5, ease: [0.16, 1, 0.3, 1] },
-            y: { duration: 8, repeat: Infinity, ease: "easeInOut" },
-          }}
-          whileHover={{ scale: 1.05, opacity: 1, y: 0 }}
-          className="relative aspect-[3/4.5] rounded-sm overflow-hidden border border-gold/30 shadow-cinematic group cursor-pointer"
-        >
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500 z-10" />
-          <img
-            src={groomImg}
-            alt="Groom R. Gururajan"
-            className="w-full h-full object-cover transition-transform duration-[3000ms] group-hover:scale-110"
-          />
-          <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-20 text-center">
-            <p className="text-[9px] tracking-[0.3em] uppercase text-gold/80">
-              The Groom
-            </p>
-            <p className="font-display text-base text-ivory mt-0.5 tracking-wide">
-              R. Gururajan
-            </p>
-          </div>
-          <div className="absolute inset-2 border border-gold/15 pointer-events-none z-30" />
-        </motion.div>
-      </div>
 
-      <div className="hidden lg:block absolute right-8 xl:right-16 top-1/2 -translate-y-1/2 z-20 w-44 xl:w-48 overflow-visible">
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{
-            opacity: 0.85,
-            x: 0,
-            y: [8, -8, 8],
-          }}
-          transition={{
-            initial: { delay: 2.0, duration: 1.5, ease: [0.16, 1, 0.3, 1] },
-            y: { duration: 8, repeat: Infinity, ease: "easeInOut" },
-          }}
-          whileHover={{ scale: 1.05, opacity: 1, y: 0 }}
-          className="relative aspect-[3/4.5] rounded-sm overflow-hidden border border-gold/30 shadow-cinematic group cursor-pointer"
-        >
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500 z-10" />
-          <img
-            src={brideImg}
-            alt="Bride S. Shagathiya"
-            className="w-full h-full object-cover transition-transform duration-[3000ms] group-hover:scale-110"
-          />
-          <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-20 text-center">
-            <p className="text-[9px] tracking-[0.3em] uppercase text-gold/80">
-              The Bride
-            </p>
-            <p className="font-display text-base text-ivory mt-0.5 tracking-wide">
-              S. Shagathiya
-            </p>
-          </div>
-          <div className="absolute inset-2 border border-gold/15 pointer-events-none z-30" />
-        </motion.div>
-      </div>
 
       <div className="relative z-10 flex min-h-[100svh] items-center justify-center px-5 sm:px-6"
       >
