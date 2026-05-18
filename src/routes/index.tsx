@@ -4,7 +4,6 @@ import { Intro } from "@/components/wedding/Intro";
 import { Hero } from "@/components/wedding/Hero";
 import { Preloader } from "@/components/wedding/Preloader";
 import { Divider } from "@/components/wedding/Divider";
-import { Petals } from "@/components/wedding/Petals";
 import musicFile from "@/assets/music.mp3";
 import { motion } from "framer-motion";
 
@@ -88,9 +87,7 @@ function Index() {
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 z-[1] opacity-35 sm:opacity-40"
-      >
-        <Petals count={4} />
-      </div>
+      />
       <Intro
         open={open}
         onOpen={() => setOpen(true)}

@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import { Petals } from "./Petals";
-import { Particles } from "./Particles";
 import { Monogram } from "./Monogram";
 
 const revealEase = [0.16, 1, 0.3, 1] as const;
@@ -8,52 +6,7 @@ const revealEase = [0.16, 1, 0.3, 1] as const;
 export function Ending() {
   return (
     <section className="relative py-20 sm:py-32 px-5 sm:px-6 overflow-hidden bg-maroon-deep">
-      {/* Atmospheric layers - shared across entire ending */}
       <div className="absolute inset-0 bg-ambient opacity-60" />
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 40%, oklch(0.78 0.12 82 / 0.1), transparent 65%)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 60%, oklch(0.55 0.09 55 / 0.08), transparent 50%)",
-        }}
-      />
-      <div className="absolute inset-0 grain opacity-40" />
-
-      <Particles count={15} />
-      <Petals count={4} />
-
-      {/* Cinematic vignette overlay */}
-      <motion.div
-        animate={{ opacity: [0.5, 0.75, 0.5] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, transparent 40%, oklch(0 0 0 / 0.4) 100%)",
-        }}
-      />
-
-      {/* Warm gold glow sweep */}
-      <motion.div
-        animate={{ opacity: [0.15, 0.3, 0.15] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        aria-hidden
-        className="absolute -top-1/3 left-1/2 -translate-x-1/2 h-[80vh] w-[80vh] rounded-full pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, oklch(0.78 0.12 82 / 0.18), transparent 60%)",
-          filter: "blur(50px)",
-        }}
-      />
 
       <div className="relative max-w-3xl mx-auto text-center">
         {/* ── Emotional closing message ── */}

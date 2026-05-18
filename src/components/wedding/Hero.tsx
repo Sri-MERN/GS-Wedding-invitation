@@ -1,55 +1,24 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.webp";
 import groomImg from "@/assets/groom.webp";
 import brideImg from "@/assets/bride.webp";
-import { Petals } from "./Petals";
-import { Particles } from "./Particles";
 import { Ornament } from "./Ornament";
 
 export function Hero() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.9], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1.04, 1.16]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-12%"]);
-
   return (
-    <section
-      ref={ref}
-      className="relative min-h-[100svh] w-full overflow-hidden"
-    >
-      <motion.div style={{ y, scale }} className="absolute inset-0">
+    <section className="relative min-h-[100svh] w-full overflow-hidden">
+      <div className="absolute inset-0">
         <img
           src={heroBg}
           alt="Cinematic Tamil wedding ambience with brass diyas, jasmine and maroon silk"
-          className="h-full w-full object-cover scale-105"
+          className="h-full w-full object-cover"
           width={1920}
           height={1280}
           loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/35 to-background" />
-        <div className="absolute inset-0 bg-ambient mix-blend-overlay" />
         <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,transparent_40%,oklch(0_0_0/0.55)_100%)] pointer-events-none" />
-        <motion.div
-          aria-hidden
-          animate={{ opacity: [0.35, 0.55, 0.35] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-1/3 left-1/2 -translate-x-1/2 h-[120vh] w-[120vh] rounded-full"
-          style={{
-            background:
-              "radial-gradient(circle, oklch(0.78 0.13 70 / 0.22), transparent 60%)",
-            filter: "blur(40px)",
-          }}
-        />
-      </motion.div>
-
-      <Petals count={3} />
-      <Particles count={8} />
+      </div>
 
       {/* Desktop Cinematic Side Portrait Overlays with Slow Floating Effect */}
       <div className="hidden lg:block absolute left-8 xl:left-16 top-1/2 -translate-y-1/2 z-20 w-44 xl:w-48 overflow-visible">
@@ -118,9 +87,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <motion.div
-        style={{ opacity, y: contentY }}
-        className="relative z-10 flex min-h-[100svh] items-center justify-center px-5 sm:px-6"
+      <div className="relative z-10 flex min-h-[100svh] items-center justify-center px-5 sm:px-6"
       >
         <div className="text-center max-w-4xl">
           <motion.p
@@ -208,21 +175,7 @@ export function Hero() {
             June 07, 2026 · Chennai
           </motion.p>
         </div>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.4, duration: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-gold/60"
-      >
-        <span className="text-[10px] tracking-[0.4em] uppercase">Scroll</span>
-        <motion.span
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="h-8 w-px bg-gradient-to-b from-gold/70 to-transparent"
-        />
-      </motion.div>
+      </div>
     </section>
   );
 }

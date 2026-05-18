@@ -1,7 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
-import { Petals } from "./Petals";
-import { Particles } from "./Particles";
 import { Ornament } from "./Ornament";
 import { Monogram } from "./Monogram";
 import { Celebration } from "./Celebration";
@@ -40,10 +38,8 @@ export function Intro({
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.06, filter: "blur(8px)" }}
           transition={{ duration: 1.2, ease: [0.65, 0, 0.35, 1] }}
-          className="fixed inset-0 z-50 grain bg-maroon-deep bg-ambient flex items-center justify-center overflow-hidden"
+          className="fixed inset-0 z-50 bg-maroon-deep bg-ambient flex items-center justify-center overflow-hidden"
         >
-          <Particles count={12} />
-          <Petals count={4} />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
 
           <motion.div
