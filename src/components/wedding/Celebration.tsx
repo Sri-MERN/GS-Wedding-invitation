@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { useMemo } from "react";
 
-const HEART_COUNT = 14;
-const PARTICLE_COUNT = 20;
+const HEART_COUNT = 8;
+const PARTICLE_COUNT = 12;
 
 type HeartConfig = {
   id: number;

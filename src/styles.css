@@ -231,6 +231,10 @@
   }
 
   @media (max-width: 640px) {
-    .shimmer-text { animation-duration: 8s; }
+    .shimmer-text { animation: none; background: var(--gold-soft); -webkit-background-clip: text; background-clip: text; }
+    .grain::before { display: none; }
+    .petal { filter: none !important; }
+    .flicker { box-shadow: none !important; }
+    .glass { backdrop-filter: none; }
   }
 }

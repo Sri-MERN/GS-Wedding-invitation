@@ -48,8 +48,8 @@ export function Hero() {
         />
       </motion.div>
 
-      <Petals count={5} />
-      <Particles count={12} />
+      <Petals count={3} />
+      <Particles count={8} />
 
       {/* Desktop Cinematic Side Portrait Overlays with Slow Floating Effect */}
       <div className="hidden lg:block absolute left-8 xl:left-16 top-1/2 -translate-y-1/2 z-20 w-44 xl:w-48 overflow-visible">

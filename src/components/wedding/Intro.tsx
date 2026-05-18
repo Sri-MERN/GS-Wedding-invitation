@@ -42,8 +42,8 @@ export function Intro({
           transition={{ duration: 1.2, ease: [0.65, 0, 0.35, 1] }}
           className="fixed inset-0 z-50 grain bg-maroon-deep bg-ambient flex items-center justify-center overflow-hidden"
         >
-          <Particles count={30} />
-          <Petals count={8} />
+          <Particles count={12} />
+          <Petals count={4} />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
 
           <motion.div
