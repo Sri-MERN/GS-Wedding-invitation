@@ -1,8 +1,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import heroBg from "@/assets/hero-bg.jpg";
-import groomImg from "@/assets/groom.png";
-import brideImg from "@/assets/bride.png";
+import heroBg from "@/assets/hero-bg.webp";
+import groomImg from "@/assets/groom.webp";
+import brideImg from "@/assets/bride.webp";
 import { Petals } from "./Petals";
 import { Particles } from "./Particles";
 import { Ornament } from "./Ornament";
@@ -48,8 +48,8 @@ export function Hero() {
         />
       </motion.div>
 
-      <Petals count={8} />
-      <Particles count={20} />
+      <Petals count={5} />
+      <Particles count={12} />
 
       {/* Desktop Cinematic Side Portrait Overlays with Slow Floating Effect */}
       <div className="hidden lg:block absolute left-8 xl:left-16 top-1/2 -translate-y-1/2 z-20 w-44 xl:w-48 overflow-visible">

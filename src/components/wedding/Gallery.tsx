@@ -2,14 +2,14 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Reveal } from "./Reveal";
 import { Ornament } from "./Ornament";
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import g5 from "@/assets/gallery-5.jpg";
-import g6 from "@/assets/gallery-6.jpg";
-import groomImg from "@/assets/groom.png";
-import brideImg from "@/assets/bride.png";
+import g1 from "@/assets/gallery-1.webp";
+import g2 from "@/assets/gallery-2.webp";
+import g3 from "@/assets/gallery-3.webp";
+import g4 from "@/assets/gallery-4.webp";
+import g5 from "@/assets/gallery-5.webp";
+import g6 from "@/assets/gallery-6.webp";
+import groomImg from "@/assets/groom.webp";
+import brideImg from "@/assets/bride.webp";
 
 const images = [
   {

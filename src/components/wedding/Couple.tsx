@@ -1,5 +1,5 @@
-import groomImg from "@/assets/groom.png";
-import brideImg from "@/assets/bride.png";
+import groomImg from "@/assets/groom.webp";
+import brideImg from "@/assets/bride.webp";
 import { Reveal } from "./Reveal";
 import { Ornament } from "./Ornament";
 import { motion, useSpring, useTransform } from "framer-motion";

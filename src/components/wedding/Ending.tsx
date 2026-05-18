@@ -28,8 +28,8 @@ export function Ending() {
       />
       <div className="absolute inset-0 grain opacity-40" />
 
-      <Particles count={30} />
-      <Petals count={6} />
+      <Particles count={15} />
+      <Petals count={4} />
 
       {/* Cinematic vignette overlay */}
       <motion.div

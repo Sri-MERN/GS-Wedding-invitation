@@ -14,4 +14,15 @@ export default defineConfig({
       "@": `${process.cwd()}/src`,
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom"],
+          motion: ["framer-motion"],
+          ui: ["@radix-ui/react-dialog", "@radix-ui/react-select", "@radix-ui/react-tabs"],
+        },
+      },
+    },
+  },
 });

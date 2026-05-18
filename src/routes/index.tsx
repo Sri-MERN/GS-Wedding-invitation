@@ -1,20 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState, useRef } from "react";
+import { Suspense, lazy, useEffect, useState, useRef } from "react";
 import { Intro } from "@/components/wedding/Intro";
 import { Hero } from "@/components/wedding/Hero";
-import { Countdown } from "@/components/wedding/Countdown";
-import { Couple } from "@/components/wedding/Couple";
-import { Story } from "@/components/wedding/Story";
-import { Events } from "@/components/wedding/Events";
-import { Gallery } from "@/components/wedding/Gallery";
-import { Family } from "@/components/wedding/Family";
-import { RSVP } from "@/components/wedding/RSVP";
 import { Preloader } from "@/components/wedding/Preloader";
 import { Divider } from "@/components/wedding/Divider";
-import { Ending } from "@/components/wedding/Ending";
 import { Petals } from "@/components/wedding/Petals";
 import musicFile from "@/assets/music.mp3";
 import { motion } from "framer-motion";
+
+const LazyCountdown = lazy(() => import("@/components/wedding/Countdown").then(m => ({ default: m.Countdown })));
+const LazyCouple = lazy(() => import("@/components/wedding/Couple").then(m => ({ default: m.Couple })));
+const LazyStory = lazy(() => import("@/components/wedding/Story").then(m => ({ default: m.Story })));
+const LazyEvents = lazy(() => import("@/components/wedding/Events").then(m => ({ default: m.Events })));
+const LazyGallery = lazy(() => import("@/components/wedding/Gallery").then(m => ({ default: m.Gallery })));
+const LazyFamily = lazy(() => import("@/components/wedding/Family").then(m => ({ default: m.Family })));
+const LazyRSVP = lazy(() => import("@/components/wedding/RSVP").then(m => ({ default: m.RSVP })));
+const LazyEnding = lazy(() => import("@/components/wedding/Ending").then(m => ({ default: m.Ending })));
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -98,21 +99,21 @@ function Index() {
       <main className="relative z-10">
         <Hero />
         <Divider />
-        <Countdown />
+        <Suspense fallback={null}><LazyCountdown /></Suspense>
         <Divider />
-        <Couple />
+        <Suspense fallback={null}><LazyCouple /></Suspense>
         <Divider />
-        <Story />
+        <Suspense fallback={null}><LazyStory /></Suspense>
         <Divider />
-        <Events />
+        <Suspense fallback={null}><LazyEvents /></Suspense>
         <Divider />
-        <Gallery />
+        <Suspense fallback={null}><LazyGallery /></Suspense>
         <Divider />
-        <Family />
+        <Suspense fallback={null}><LazyFamily /></Suspense>
         <Divider />
-        <RSVP />
+        <Suspense fallback={null}><LazyRSVP /></Suspense>
         <Divider />
-        <Ending />
+        <Suspense fallback={null}><LazyEnding /></Suspense>
       </main>
 
       {open && (

@@ -18,7 +18,7 @@ export function Preloader() {
           transition={{ duration: 1.0, ease: [0.65, 0, 0.35, 1] }}
           className="fixed inset-0 z-[60] flex items-center justify-center bg-maroon-deep bg-ambient overflow-hidden"
         >
-          <Particles count={40} />
+          <Particles count={20} />
           <div className="absolute inset-0 [background:radial-gradient(ellipse_at_center,transparent_30%,oklch(0_0_0/0.7)_100%)]" />
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
