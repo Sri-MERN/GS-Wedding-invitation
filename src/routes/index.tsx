@@ -9,7 +9,6 @@ import { Events } from "@/components/wedding/Events";
 import { Gallery } from "@/components/wedding/Gallery";
 import { Family } from "@/components/wedding/Family";
 import { RSVP } from "@/components/wedding/RSVP";
-import { Footer } from "@/components/wedding/Footer";
 import { Preloader } from "@/components/wedding/Preloader";
 import { Divider } from "@/components/wedding/Divider";
 import { Ending } from "@/components/wedding/Ending";
@@ -114,7 +113,6 @@ function Index() {
         <RSVP />
         <Divider />
         <Ending />
-        <Footer />
       </main>
 
       {open && (
