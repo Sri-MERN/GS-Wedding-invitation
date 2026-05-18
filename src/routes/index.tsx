@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Suspense, lazy, useEffect, useState, useRef } from "react";
 import { Intro } from "@/components/wedding/Intro";
 import { Hero } from "@/components/wedding/Hero";
-import { Preloader } from "@/components/wedding/Preloader";
 import { Divider } from "@/components/wedding/Divider";
 import musicFile from "@/assets/music.mp3";
 import { motion } from "framer-motion";
@@ -75,7 +74,6 @@ function Index() {
 
   return (
     <div className="relative bg-background text-foreground overflow-hidden">
-      <Preloader />
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 z-0 bg-ambient opacity-60"
