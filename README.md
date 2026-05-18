@@ -1,6 +1,6 @@
 # R. Gururajan & S. Shagathiya — Wedding Invitation
 
-A cinematic, luxury single-page wedding invitation microsite built with **TanStack Start**, **React**, **Vite**, **Tailwind CSS v4**, and **Cloudflare Workers**.
+A cinematic, luxury single-page wedding invitation microsite built with **React**, **Vite**, **TanStack Router**, **Tailwind CSS v4**, and **Framer Motion**.
 
 > **Wedding Date:** June 7, 2026 | **Venue:** D.R. Mahal, Santhapet, Chennai
 
@@ -18,7 +18,7 @@ A cinematic, luxury single-page wedding invitation microsite built with **TanSta
 - **Photo Gallery** — Responsive masonry-like grid with 8 images and full-screen lightbox
 - **Family Blessings** — Collapsible accordion cards for both families
 - **RSVP Actions** — WhatsApp, Call, and Navigate buttons
-- **Emotional Ending Section** — Cinematic closing with heartfelt message, glowing monogram, warm gold vignette, and floating particles
+- **Continuous Cinematic Ending** — Single merged section flowing from emotional quote through monogram and couple names to closing line, with warm gold vignette and floating particles
 - **Background Audio** — Looping ambient music with elegant floating toggle button with animated soundwave bars
 - **Mobile Perfection** — App-like, smooth, and luxurious on mobile with responsive typography, optimized touch targets, reduced particle counts for performance, and immersive full-screen sections
 - **Atmosphere** — Floating golden petals, twinkling diya-like particles, grain texture overlay, warm gold ambient glow, cinematic lighting gradients
@@ -52,7 +52,7 @@ Starts the Vite dev server at **http://localhost:8080** with Hot Module Replacem
 npm run build
 ```
 
-Produces a production build (SSR + client bundles) in `dist/`.
+Produces a production build in `dist/` ready for static hosting.
 
 ### Preview
 
@@ -99,8 +99,7 @@ src/
 │       ├── Gallery.tsx             # Photo grid with lightbox
 │       ├── Family.tsx              # Collapsible family accordions
 │       ├── RSVP.tsx                # RSVP action buttons
-│       ├── Ending.tsx              # Emotional cinematic closing
-│       ├── Footer.tsx              # Closing footer with monogram
+│       ├── Ending.tsx              # Continuous cinematic ending (quote + monogram + couple names + closing)
 │       ├── Celebration.tsx         # Full-screen celebration burst
 │       ├── Monogram.tsx            # Animated G&S emblem
 │       ├── Petals.tsx              # Floating golden petals
@@ -112,17 +111,15 @@ src/
 ├── hooks/
 │   └── use-mobile.tsx
 ├── lib/
-│   ├── utils.ts                   # cn() utility (clsx + tailwind-merge)
-│   ├── error-capture.ts           # Global SSR error capture
-│   └── error-page.ts              # Error page HTML renderer
+│   └── utils.ts                   # cn() utility (clsx + tailwind-merge)
 ├── routes/
-│   ├── __root.tsx                  # Root layout, head meta, error/404 pages
+│   ├── __root.tsx                  # Root layout, error/404 pages
 │   └── index.tsx                   # Single-page route composing all sections
+├── main.tsx                        # React entry point
 ├── routeTree.gen.ts               # Auto-generated router tree
-├── router.tsx                     # TanStack Router + QueryClient setup
-├── server.ts                      # Cloudflare Workers entry (fetch handler)
-├── start.ts                       # TanStack Start instance
-└── styles.css                     # Tailwind CSS v4 + custom theme
+├── router.tsx                     # TanStack Router setup
+├── styles.css                     # Tailwind CSS v4 + custom theme
+├── index.html                     # Vite HTML entry point
 ```
 
 ---
@@ -131,30 +128,28 @@ src/
 
 | Technology | Purpose |
 |---|---|
-| **TanStack Start** v1.167 | Full-stack SSR framework |
-| **TanStack Router** v1.168 | Type-safe routing |
 | **React** v19 | UI framework |
 | **Vite** v7 | Build tool & dev server |
+| **TanStack Router** v1.168 | Type-safe routing |
 | **Tailwind CSS** v4 | Utility-first styling |
 | **Framer Motion** v12 | Animations, scroll effects, 3D tilt |
 | **shadcn/ui** (Radix primitives) | Reusable UI components |
-| **Cloudflare Workers** | Serverless deployment |
 | **TypeScript** | Type safety |
 
 ---
 
 ## Deployment
 
-This project is configured for **Cloudflare Workers** via `wrangler.jsonc`.
+This is a static site. Deploy the `dist/` folder to any hosting provider.
 
-### Deploy to Cloudflare
+### Deploy to Vercel
 
 ```bash
 npm run build
-npx wrangler deploy
+vercel --prod --yes
 ```
 
-The worker entry point is `src/server.ts`.
+Or connect your GitHub repo to Vercel for automatic deployments.
 
 ---
 
@@ -164,7 +159,6 @@ The worker entry point is `src/server.ts`.
 |---|---|
 | `vite.config.ts` | Vite plugins, dev server, aliases |
 | `tsconfig.json` | TypeScript settings |
-| `wrangler.jsonc` | Cloudflare Workers config |
 | `eslint.config.js` | ESLint + Prettier integration |
 | `components.json` | shadcn/ui settings |
 
@@ -188,7 +182,7 @@ Custom gradients, glass effects, and animations (floating petals, diya flicker, 
 
 - **Mobile-first luxury** — Responsive typography scaling, optimized touch targets, reduced particle counts on mobile, app-like smooth scrolling
 - **Premium dividers** — Glowing gold gradient lines with temple-inspired star motifs and pulsing golden dot between every section
-- **Cinematic ending** — Emotional closing section with "Your presence will make our celebration complete," glowing monogram, warm gold vignette, and floating particles
+- **Continuous cinematic ending** — Single merged section flowing from emotional quote through glowing monogram and couple names to "Made with love," with warm gold vignette and floating particles
 - **Performance optimized** — `will-change` hints for GPU-accelerated animations, reduced motion considerations, lazy-loaded gallery images
 - **Typography** — Cormorant Garamond (display), Inter (body), Catamaran (Tamil) with careful tracking and leading
 
